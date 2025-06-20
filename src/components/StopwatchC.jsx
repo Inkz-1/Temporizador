@@ -5,14 +5,13 @@ export default function GiornoStopwatch() {
   const [running, setRunning] = useState(false);
 
   const playAudio = (src) => {
-    const audio = new Audio(src);
+    const audio = new Audio(import.meta.env.BASE_URL + src);
     audio.loop = false;
     audio.currentTime = 0;
     audio.volume = 1;
-    audio.play().catch(err => {
-      console.warn("Falha ao reproduzir o áudio:", err);
-    });
+    audio.play();
   };
+
 
   useEffect(() => {
     let interval;
