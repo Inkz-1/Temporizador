@@ -9,7 +9,7 @@ export default function GiornoStopwatch() {
     audio.loop = false;
     audio.currentTime = 0;
     audio.volume = 1;
-    audio.play();
+    audio.play().catch(console.error);
   };
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function GiornoStopwatch() {
   const handleStart = () => {
     setRunning(true);
     document.body.className = 'giorno-started';
-    playAudio('sounds/start-cd.mp3'); // SEM barra inicial nem nome do repo
+    playAudio('sounds/start-cd.mp3');
   };
 
   const handleReset = () => {
