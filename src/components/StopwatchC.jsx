@@ -32,14 +32,14 @@ export default function GiornoStopwatch() {
   const handleStart = () => {
     setRunning(true);
     document.body.className = 'giorno-started';
-    playAudio('/sounds/start-cd.mp3');
+    playAudio('/Temporizador/sounds/start-cd.mp3');
   };
 
   const handleReset = () => {
     setRunning(false);
     setTime(0);
     document.body.className = 'giorno-reset';
-    playAudio('/sounds/reset.mp3');
+    playAudio('/Temporizador/sounds/reset.mp3');
   };
 
   return (
@@ -50,11 +50,11 @@ export default function GiornoStopwatch() {
         <button className="giorno-btn start" onClick={handleStart}>
           Iniciar
         </button>
-              <hr/>
+        <hr />
         <button className="giorno-btn reset" onClick={handleReset}>
           Resetar
         </button>
-        
+
       </div>
     </div>
   );
