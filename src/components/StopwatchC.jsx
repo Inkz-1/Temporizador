@@ -12,7 +12,6 @@ export default function GiornoStopwatch() {
     audio.play();
   };
 
-
   useEffect(() => {
     let interval;
     if (running) {
@@ -27,18 +26,17 @@ export default function GiornoStopwatch() {
     let s = String(time % 60).padStart(2, '0');
     return `${h}:${m}:${s}`;
   };
-
   const handleStart = () => {
     setRunning(true);
     document.body.className = 'giorno-started';
-    playAudio('/Temporizador/sounds/start-cd.mp3');
+    playAudio('sounds/start-cd.mp3'); // SEM barra inicial nem nome do repo
   };
 
   const handleReset = () => {
     setRunning(false);
     setTime(0);
     document.body.className = 'giorno-reset';
-    playAudio('/Temporizador/sounds/reset.mp3');
+    playAudio('sounds/reset.mp3');
   };
 
   return (
